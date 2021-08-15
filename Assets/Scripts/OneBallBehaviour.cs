@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class OneBallBehaviour : MonoBehaviour
 {
+    private static int count = 0;
+    public int BallNumber;
     public float XRotation = 0;
 
     public float YRotation = 1;
@@ -14,8 +16,15 @@ public class OneBallBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        count++;
+        BallNumber = count;
         transform.position = new Vector3(3 - Random.value * 6,
             3 - Random.value * 6, 3 - Random.value * 6);
+    }
+
+    public OneBallBehaviour(int ballNumber)
+    {
+        BallNumber = ballNumber;
     }
 
     // Update is called once per frame
